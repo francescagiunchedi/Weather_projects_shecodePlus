@@ -105,6 +105,10 @@ h2 {
 .week-days {
   margin-bottom: -2px;
 }
+.link-git {
+  margin: 15px 0 10px 30px;
+  font-size: 12px;
+}
 #toda-date {
   display: block;
 }
