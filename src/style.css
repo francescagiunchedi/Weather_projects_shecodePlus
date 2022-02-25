@@ -18,12 +18,8 @@ h2 {
   margin-top: 100px;
   padding: 10px 12px 0 12px;
   border-radius: 30px;
-  background: rgb(234, 253, 255);
-  background: linear-gradient(
-    0deg,
-    rgb(207, 241, 245) 0%,
-    rgb(238, 252, 253) 100%
-  );
+  background-color: rgba(162, 227, 235, 0.075);
+  border: 1px solid rgba(109, 152, 158, 0.226);
 }
 .size {
   min-height: 500px;
@@ -54,19 +50,19 @@ h2 {
 .btn-search {
   float: right;
   border: none;
-  background-color: rgb(216, 216, 216);
+  background-color: rgba(162, 227, 235, 0.452);
   padding: 6px 19px;
   border-radius: 0 5px 5px 0;
 }
 .location {
   margin-left: 20px;
   border: none;
-  background-color: rgba(162, 227, 235, 0.425);
+  background-color: rgba(162, 227, 235, 0.452);
   padding: 6px 19px;
   border-radius: 5px;
 }
 .btn-search:hover {
-  background-color: rgb(170, 170, 170);
+  background-color: rgba(162, 227, 235, 0.623);
 }
 .col-no-border {
   padding: 0;
@@ -99,8 +95,8 @@ h2 {
   color: #f39c12;
 }
 .curved-bottom-gray {
-  background-color: #ace1e77c;
-  border-radius: 0 0 30px 30px;
+  background-color: rgba(162, 227, 235, 0.178);
+  border-radius: 30px;
 }
 .week-days {
   margin-bottom: -2px;
