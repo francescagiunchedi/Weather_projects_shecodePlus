@@ -21,7 +21,7 @@ function search(event) {
 function showTemp(response) {
   let temperature = Math.round(response.data.main.temp);
   let degreeToday = document.querySelector("#degree-today");
-  degreeToday.innerHTML = `${temperature}°c`;
+  degreeToday.innerHTML = `${temperature}`;
 }
 
 function findPosition() {

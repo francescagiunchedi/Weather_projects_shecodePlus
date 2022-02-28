@@ -4,14 +4,21 @@ body {
 }
 h1 {
   font-size: 65px;
-  font-weight: 400;
-  text-align: center;
-  justify-content: center;
+  font-weight: 500;
 }
 h2 {
   font-size: 40px;
   font-weight: 300;
   text-align: center;
+}
+ul {
+  margin: 0;
+  padding: 0 10px;
+  font-size: 20px;
+}
+li {
+  text-decoration: none;
+  list-style: none;
 }
 
 .app-ctn {
@@ -73,16 +80,25 @@ h2 {
   margin-top: 16%;
 }
 .city-title {
-  margin: 110px auto;
+  margin-top: 75px;
+
+  padding: 20px 50px;
+}
+.city-title h1 {
+  margin-bottom: 25px;
 }
 .temperature {
   font-size: 30px;
   font-weight: 300;
 }
 .temp-today {
-  font-size: 60px;
-  text-align: center;
-  justify-content: center;
+  font-size: 30px;
+  margin: 0;
+}
+
+.temp-today span {
+  font-size: 50px;
+  font-weight: 300;
 }
 
 .t-icon {
