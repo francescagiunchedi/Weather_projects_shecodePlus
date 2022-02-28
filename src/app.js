@@ -58,7 +58,7 @@ function todayFormat(today) {
   let timeMinute = ("0" + today.getMinutes()).slice(-2);
   let weekDay = days[today.getDay()];
 
-  let mainDay = `${weekDay} <br /> ${timeHours}:${timeMinute}`;
+  let mainDay = `${weekDay} ${timeHours}:${timeMinute}`;
   return mainDay;
 }
 

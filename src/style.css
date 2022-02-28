@@ -6,17 +6,13 @@ h1 {
   font-size: 65px;
   font-weight: 500;
 }
-h2 {
-  font-size: 40px;
-  font-weight: 300;
-  text-align: center;
-}
 ul {
   margin: 0;
   padding: 0 10px;
-  font-size: 20px;
 }
 li {
+  font-size: 20px;
+  font-weight: 300;
   text-decoration: none;
   list-style: none;
 }
@@ -87,6 +83,20 @@ li {
 .city-title h1 {
   margin-bottom: 25px;
 }
+
+.city-title p {
+  font-size: 20px;
+  font-weight: 300;
+  margin: 0;
+}
+.city-title span {
+  font-weight: 400;
+}
+.city-title div {
+  margin-left: 10px;
+  margin-top: 77px;
+}
+
 .temperature {
   font-size: 30px;
   font-weight: 300;
@@ -120,9 +130,6 @@ li {
 .link-git {
   margin: 15px 0 10px 30px;
   font-size: 12px;
-}
-#toda-date {
-  display: block;
 }
 #retrive-location:hover {
   background-color: rgba(162, 227, 235, 0.623);
