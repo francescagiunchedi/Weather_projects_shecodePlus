@@ -131,6 +131,9 @@ li {
   margin: 15px 0 10px 30px;
   font-size: 12px;
 }
+.uppercase::first-letter {
+  text-transform: capitalize;
+}
 #retrive-location:hover {
   background-color: rgba(162, 227, 235, 0.623);
 }
