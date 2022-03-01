@@ -16,6 +16,7 @@ li {
   font-weight: 300;
   text-decoration: none;
   list-style: none;
+  margin-bottom: 5px;
 }
 
 .app-ctn {
