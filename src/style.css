@@ -9,6 +9,7 @@ h1 {
 ul {
   margin: 0;
   padding: 0 10px;
+  margin-top: 6px;
 }
 li {
   font-size: 20px;
@@ -76,12 +77,12 @@ li {
   margin-top: 16%;
 }
 .city-title {
-  margin-top: 75px;
+  margin-top: 160px;
   padding: 20px;
   padding-left: 117px;
 }
 .city-title h1 {
-  margin-bottom: 25px;
+  margin: 0;
 }
 
 .city-title p {
@@ -94,7 +95,7 @@ li {
 }
 .city-title div {
   margin-left: 10px;
-  margin-top: 77px;
+  margin-top: 10px;
 }
 
 .temperature {
