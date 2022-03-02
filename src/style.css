@@ -19,6 +19,13 @@ li {
   margin-bottom: 5px;
 }
 
+.divflex {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  margin-left: 109px;
+}
+
 .app-ctn {
   margin-top: 100px;
   padding: 10px 12px 0 12px;
@@ -27,7 +34,7 @@ li {
   border: 1px solid rgba(109, 152, 158, 0.226);
 }
 .size {
-  min-height: 500px;
+  min-height: 400px;
 }
 
 .days {
