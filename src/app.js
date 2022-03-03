@@ -25,7 +25,8 @@ function showTemperature(response) {
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
   let iconDescriptionElement = document.querySelector("#icon");
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  celsius = Math.round(response.data.main.temp);
+  temperatureElement.innerHTML = celsius;
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].main;
   humidityElement.innerHTML = response.data.main.humidity;
@@ -49,7 +50,29 @@ function inputSearch(event) {
   search(cityInput.value);
 }
 
+function convertToFarenhait(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  celsiusTemperature.classList.remove("active");
+  farenhaitTemperature.classList.add("active");
+  temperatureElement.innerHTML = Math.round((celsius * 9) / 5 + 32);
+}
+function convertToCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  celsiusTemperature.classList.add("active");
+  farenhaitTemperature.classList.remove("active");
+  temperatureElement.innerHTML = celsius;
+}
+
+let celsius = null;
+
 let formElement = document.querySelector("#form");
 formElement.addEventListener("submit", inputSearch);
+
+let farenhaitTemperature = document.querySelector("#farenhait-temp");
+farenhaitTemperature.addEventListener("click", convertToFarenhait);
+let celsiusTemperature = document.querySelector("#celsius-temp");
+celsiusTemperature.addEventListener("click", convertToCelsius);
 
 search("london");

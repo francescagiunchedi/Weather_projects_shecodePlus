@@ -148,6 +148,16 @@ li {
 .uppercase::first-letter {
   text-transform: capitalize;
 }
+.active {
+  color: rgba(0, 0, 0, 0.781);
+  cursor: default;
+  text-decoration: none;
+}
+.active:hover {
+  color: rgba(0, 0, 0, 0.781);
+  cursor: default;
+  text-decoration: none;
+}
 #retrive-location:hover {
   background-color: rgba(162, 227, 235, 0.623);
 }
