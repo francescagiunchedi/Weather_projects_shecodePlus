@@ -17,7 +17,6 @@ function formatDate(timestamp) {
 }
 
 function showTemperature(response) {
-  console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
@@ -38,9 +37,17 @@ function showTemperature(response) {
   );
   iconDescriptionElement.setAttribute("alt", response.data.weather[0].main);
 }
+function search(city) {
+  let apiKey = "4ff86370e362a341be667316345b71fc";
+  let api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(api).then(showTemperature);
+}
 
-let apiKey = "4ff86370e362a341be667316345b71fc";
-let city = "Chiavari";
-let api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+function inputSearch(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#search");
+  search(cityInput.value);
+}
 
-axios.get(api).then(showTemperature);
+let formElement = document.querySelector("#form");
+formElement.addEventListener("submit", inputSearch);
