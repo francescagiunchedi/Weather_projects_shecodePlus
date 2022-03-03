@@ -140,9 +140,18 @@ li {
   margin: 15px 0 10px 30px;
   font-size: 12px;
 }
+.div-temperature {
+  position: relative;
+  top: 27px;
+  margin-bottom: 45px;
+}
 .uppercase::first-letter {
   text-transform: capitalize;
 }
 #retrive-location:hover {
   background-color: rgba(162, 227, 235, 0.623);
+}
+#icon {
+  position: relative;
+  left: 14%;
 }
