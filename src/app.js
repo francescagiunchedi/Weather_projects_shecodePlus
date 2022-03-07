@@ -17,8 +17,10 @@ function formatDate(timestamp) {
 }
 
 function showTemperature(response) {
+  console.log(response.data.sys.country);
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
+  let countryElement = document.querySelector("#country");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
@@ -28,6 +30,7 @@ function showTemperature(response) {
   celsius = Math.round(response.data.main.temp);
   temperatureElement.innerHTML = celsius;
   cityElement.innerHTML = response.data.name;
+  countryElement.innerHTML = `(${response.data.sys.country})`;
   descriptionElement.innerHTML = response.data.weather[0].main;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = response.data.wind.speed;
