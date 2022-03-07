@@ -1,6 +1,7 @@
 body {
   font-family: "Roboto", sans-serif;
   color: rgba(0, 0, 0, 0.781);
+  background-color: rgba(236, 245, 247, 0.541);
 }
 h1 {
   font-size: 65px;
@@ -10,6 +11,7 @@ ul {
   margin: 0;
   padding: 0 10px;
   margin-top: 6px;
+  text-align: center;
 }
 li {
   font-size: 20px;
@@ -29,9 +31,9 @@ li {
 .app-ctn {
   margin-top: 100px;
   padding: 10px 12px 0 12px;
-  border-radius: 30px;
-  background-color: rgba(162, 227, 235, 0.075);
-  border: 1px solid rgba(109, 152, 158, 0.226);
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px rgba(224, 224, 224, 0.445);
 }
 .size {
   min-height: 400px;
@@ -41,9 +43,7 @@ li {
   text-align: center;
   padding: 20px 0;
 }
-.gray {
-  background-color: #ace1e77c;
-}
+
 .search {
   width: 80%;
   position: relative;
@@ -62,19 +62,22 @@ li {
 .btn-search {
   float: right;
   border: none;
-  background-color: rgba(162, 227, 235, 0.452);
+  background-color: rgb(210, 234, 240);
   padding: 6px 19px;
   border-radius: 0 5px 5px 0;
 }
 .location {
   margin-left: 20px;
   border: none;
-  background-color: rgba(162, 227, 235, 0.452);
+  background-color: rgb(210, 234, 240);
   padding: 6px 19px;
   border-radius: 5px;
 }
+.location:hover {
+  background-color: rgb(187, 225, 231);
+}
 .btn-search:hover {
-  background-color: rgba(162, 227, 235, 0.623);
+  background-color: rgb(187, 225, 231);
 }
 .col-no-border {
   padding: 0;
@@ -113,6 +116,7 @@ li {
 .temp-today {
   font-size: 30px;
   margin: 0;
+  text-align: center;
 }
 
 .temp-today span {
@@ -130,9 +134,10 @@ li {
   color: #f39c12;
 }
 .curved-bottom-gray {
-  background-color: rgba(162, 227, 235, 0.178);
-  border-radius: 30px;
+  background-color: rgb(235, 246, 248);
+  border-radius: 10px;
 }
+
 .week-days {
   margin-bottom: -2px;
 }
@@ -158,9 +163,7 @@ li {
   cursor: default;
   text-decoration: none;
 }
-#retrive-location:hover {
-  background-color: rgba(162, 227, 235, 0.623);
-}
+
 #icon {
   position: relative;
   left: 14%;
