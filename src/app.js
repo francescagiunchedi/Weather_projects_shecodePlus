@@ -15,6 +15,45 @@ function formatDate(timestamp) {
 
   return `${day} ${hours}:${minutes}`;
 }
+function getForecast(coordinates) {
+  let lat = coordinates.lat;
+  let lon = coordinates.lon;
+  let apiKey = "4ff86370e362a341be667316345b71fc";
+  let api = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(api).then(showForecast);
+}
+
+function forecastDayFormat(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let day = days[date.getDay()];
+  return day;
+}
+
+function showForecast(response) {
+  let forecastData = response.data.daily;
+  let forecastElement = document.querySelector("#java-row");
+  let forecast = `<div class="row bottom-position">`;
+
+  forecastData.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecast =
+        forecast +
+        `
+    <div class="col-md col-no-border ">
+                <div id ="bg" class="days">
+                    <i class="bi bi-brightness-low-fill w-icon sun-icon"></i>
+                  <p class="week-days">${forecastDayFormat(forecastDay.dt)}</p>
+                    <h3>${Math.round(forecastDay.temp.day)}°c</h3>
+                </div>
+    </div>`;
+    }
+  });
+
+  forecast = forecast + `</div>`;
+  forecastElement.innerHTML = forecast;
+}
 
 function showTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
@@ -39,7 +78,10 @@ function showTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconDescriptionElement.setAttribute("alt", response.data.weather[0].main);
+
+  getForecast(response.data.coord);
 }
+
 function search(city) {
   let apiKey = "4ff86370e362a341be667316345b71fc";
   let api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -52,29 +94,7 @@ function inputSearch(event) {
   search(cityInput.value);
 }
 
-function showForecast() {
-  let forecastElement = document.querySelector("#java-row");
-  let forecast = `<div class="row bottom-position">`;
-  let days = ["one", "two", "trhee"];
-
-  days.forEach(function (day) {
-    forecast =
-      forecast +
-      `
-    <div class="col-md col-no-border ">
-                <div class="days curved-bottom-gray">
-                    <i class="bi bi-brightness-low-fill w-icon sun-icon"></i>
-                  <p class="week-days" id="d1">0</p>  <p>${day}</p>
-                    <h3>29°c</h3>
-                </div>
-    </div>`;
-  });
-  forecast = forecast + `</div>`;
-  forecastElement.innerHTML = forecast;
-}
-
 let formElement = document.querySelector("#form");
 formElement.addEventListener("submit", inputSearch);
 
 search("london");
-showForecast();
