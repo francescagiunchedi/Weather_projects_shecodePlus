@@ -38,16 +38,33 @@ function showForecast(response) {
 
   forecastData.forEach(function (forecastDay, index) {
     if (index < 5) {
-      forecast =
-        forecast +
-        `
+      if (index === 1 || index === 3 || index === 5) {
+        forecast =
+          forecast +
+          `
     <div class="col-md col-no-border ">
                 <div id ="bg" class="days">
-                    <i class="bi bi-brightness-low-fill w-icon sun-icon"></i>
+                    <img src="http://openweathermap.org/img/wn/${
+                      forecastDay.weather[0].icon
+                    }@2x.png" alt="">
                   <p class="week-days">${forecastDayFormat(forecastDay.dt)}</p>
                     <h3>${Math.round(forecastDay.temp.day)}°c</h3>
                 </div>
     </div>`;
+      } else {
+        forecast =
+          forecast +
+          `
+    <div class="col-md col-no-border ">
+                <div id ="bg" class="days curved-bottom-gray">
+                    <img src="http://openweathermap.org/img/wn/${
+                      forecastDay.weather[0].icon
+                    }@2x.png" alt="">
+                  <p class="week-days">${forecastDayFormat(forecastDay.dt)}</p>
+                    <h3>${Math.round(forecastDay.temp.day)}°c</h3>
+                </div>
+    </div>`;
+      }
     }
   });
 
