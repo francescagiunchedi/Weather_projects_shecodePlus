@@ -17,7 +17,6 @@ function formatDate(timestamp) {
 }
 
 function showTemperature(response) {
-  console.log(response.data.sys.country);
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let countryElement = document.querySelector("#country");
@@ -53,29 +52,29 @@ function inputSearch(event) {
   search(cityInput.value);
 }
 
-function convertToFarenhait(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  celsiusTemperature.classList.remove("active");
-  farenhaitTemperature.classList.add("active");
-  temperatureElement.innerHTML = Math.round((celsius * 9) / 5 + 32);
-}
-function convertToCelsius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  celsiusTemperature.classList.add("active");
-  farenhaitTemperature.classList.remove("active");
-  temperatureElement.innerHTML = celsius;
-}
+function showForecast() {
+  let forecastElement = document.querySelector("#java-row");
+  let forecast = `<div class="row bottom-position">`;
+  let days = ["one", "two", "trhee"];
 
-let celsius = null;
+  days.forEach(function (day) {
+    forecast =
+      forecast +
+      `
+    <div class="col-md col-no-border ">
+                <div class="days curved-bottom-gray">
+                    <i class="bi bi-brightness-low-fill w-icon sun-icon"></i>
+                  <p class="week-days" id="d1">0</p>  <p>${day}</p>
+                    <h3>29°c</h3>
+                </div>
+    </div>`;
+  });
+  forecast = forecast + `</div>`;
+  forecastElement.innerHTML = forecast;
+}
 
 let formElement = document.querySelector("#form");
 formElement.addEventListener("submit", inputSearch);
 
-let farenhaitTemperature = document.querySelector("#farenhait-temp");
-farenhaitTemperature.addEventListener("click", convertToFarenhait);
-let celsiusTemperature = document.querySelector("#celsius-temp");
-celsiusTemperature.addEventListener("click", convertToCelsius);
-
 search("london");
+showForecast();
