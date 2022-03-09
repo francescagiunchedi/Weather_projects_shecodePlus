@@ -118,7 +118,7 @@ function showLocation(position) {
   let apiKey = "4ff86370e362a341be667316345b71fc";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
-  let api = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+  let api = `https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=${apiKey}`;
   axios.get(api).then(getCity);
 }
 
