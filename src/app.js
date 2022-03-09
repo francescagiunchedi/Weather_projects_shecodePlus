@@ -122,7 +122,7 @@ function showLocation(position) {
   axios.get(api).then(getCity);
 }
 
-function getP0sition() {
+function getPosition() {
   navigator.geolocation.getCurrentPosition(showLocation);
 }
 
@@ -130,6 +130,6 @@ let formElement = document.querySelector("#form");
 formElement.addEventListener("submit", inputSearch);
 
 let locationButton = document.querySelector("#location-button");
-locationButton.addEventListener("click", getP0sition);
+locationButton.addEventListener("click", getPosition);
 
-getP0sition();
+getPosition();
