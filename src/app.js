@@ -110,8 +110,20 @@ function inputSearch(event) {
   let cityInput = document.querySelector("#search");
   search(cityInput.value);
 }
+function getCity(location) {
+  console.log(location.data[0].name);
+  search(location.data[0].name);
+}
+
+function showLocation(position) {
+  let apiKey = "4ff86370e362a341be667316345b71fc";
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let api = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  axios.get(api).then(getCity);
+}
+
+navigator.geolocation.getCurrentPosition(showLocation);
 
 let formElement = document.querySelector("#form");
 formElement.addEventListener("submit", inputSearch);
-
-search("london");
