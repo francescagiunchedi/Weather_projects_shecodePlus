@@ -131,3 +131,5 @@ formElement.addEventListener("submit", inputSearch);
 
 let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", getPosition);
+
+getPosition();
