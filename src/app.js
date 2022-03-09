@@ -111,7 +111,6 @@ function inputSearch(event) {
   search(cityInput.value);
 }
 function getCity(location) {
-  console.log(location.data[0].name);
   search(location.data[0].name);
 }
 
@@ -123,7 +122,14 @@ function showLocation(position) {
   axios.get(api).then(getCity);
 }
 
-navigator.geolocation.getCurrentPosition(showLocation);
+function getP0sition() {
+  navigator.geolocation.getCurrentPosition(showLocation);
+}
 
 let formElement = document.querySelector("#form");
 formElement.addEventListener("submit", inputSearch);
+
+let locationButton = document.querySelector("#location-button");
+locationButton.addEventListener("click", getP0sition);
+
+getP0sition();
